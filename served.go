@@ -1,4 +1,4 @@
-package main // RIVEN/V3/SERVED.GO
+package main // RIVYN/SERVED.GO
 
 import (
 	"encoding/json"
@@ -44,7 +44,7 @@ func serveImages(jsonFile string) http.HandlerFunc {
 func main() {
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("."))))
 
-	http.HandleFunc("/", serveImages("galleries/images.json")) // Default 
+	http.HandleFunc("/", serveImages("galleries/images.json")) // Default
 
 	log.Fatal(http.ListenAndServe("127.0.0.1:8080", nil))
 }

@@ -1,4 +1,4 @@
-/* RIVEN/V3/MAIN.JS
+/* RIVYN/MAIN.JS
 */
 
 let currentIndex = -1;
