@@ -1,0 +1,36 @@
+<!-- RIVEN/V3/INDEX.HTML
+
+-->
+
+<html>
+	<head>
+		<title>{{.Title}}</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="{{.Title}} - Image Gallery">
+		<meta name="keywords" content=" Image Gallery, Photos">
+		<script src="https://unpkg.com/htmx.org@1.9.3"></script>
+		<link rel="stylesheet" type="text/css" href="/static/style.css">
+		<script src="/static/main.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<div id="header-content">
+				<h1>{{.Title}}</h1>		
+			</div>
+		</header>
+	
+		<div class="img-grid">
+				   {{range .Images}}
+				   <div class="img-container" hx-on="click: this.classList.toggle('enlarged'); toggleOverlay(this)">
+					   <img src="{{.}}" alt="Image">
+				   </div>
+				   {{end}}
+		</div>
+		
+		<div class="overlay" id="overlay" hx-on="click: closeOverlay()">
+            <img id="overlay-img" src="" alt="Enlarged Image">
+		</div>
+	</body>
+</html>
